@@ -19,7 +19,9 @@ const AddUser = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log('success', data)
+            console.log('success', data);
+            alert('users added successfully!!');
+            event.target.reset();
         })
     }
     return (
@@ -30,11 +32,11 @@ const AddUser = () => {
                     <Form onSubmit={handleAddUser} className='mt-5 border border-info p-4 rounded'>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Name</Form.Label>
-                            <Form.Control type="text" name='name' placeholder="Enter Name" required />
+                            <Form.Control type="text" name='name' required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email </Form.Label>
-                            <Form.Control type="email" name='email' placeholder="Enter email" required />
+                            <Form.Control type="email" name='email' required />
                         </Form.Group>
                         <Button variant="primary" type="submit" className='py-2 px-5'> Add User </Button>
                     </Form>
